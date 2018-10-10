@@ -9,9 +9,11 @@
                     
                 <div class="card-body">
                     <ul>
-                    @foreach($categories as $category)
-                    <li>{{$category->category_name}} - {{$category->products}}</li>
-                    @endforeach
+                        @foreach($categories as $category)
+
+                            <li><a href="{{ url('categories/'.$category['id'])}}">{{$category->name}}</a></li>
+
+                        @endforeach
                     </ul>
                 </div>
             </div>

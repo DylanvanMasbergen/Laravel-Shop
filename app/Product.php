@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    retrun $this->belongsTo(Category::class);
+	public function categories(){
+    	return $this->belongsTo(Category::class);
+	}
 }
