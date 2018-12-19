@@ -4,18 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Cart;
+use App\Order;
 use Illuminate\Http\Request;
 use Session;
 
-class ProductController extends Controller
+class Cart
 {
-    public function index()
-    {   
-        $products = Product::all();
-        return view('products.index',['products' => Product::paginate(10)]);
-    }
-    
-    public function getAddToCart(Request $request, $id)
+    public static function getAddToCart(Request $request, $id)
     {
 
         $product = Product::find($id);
@@ -29,9 +24,8 @@ class ProductController extends Controller
 
     }
 
-    public function getCart()
+    public static function getCart()
     {
-
         if (!Session::has('cart')) {
             return view('shop.shopping-cart');
         }

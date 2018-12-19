@@ -11,7 +11,7 @@ class Cart
     public $totalPrice = 0;
 
     public function __construct($oldCart)
-    {
+    {  
     	if ($oldCart){
     		$this->items = $oldCart->items;
     		$this->totalQty = $oldCart->totalQty;
@@ -19,7 +19,8 @@ class Cart
     	}
     }
 
-    public function add($item, $id) {
+    public function add($item, $id)
+    {
     	$storedItem = ['qty' => 0, 'price' => $item->price, 'item' => $item];
     	if ($this->items) {
     		if(array_key_exists($id, $this->items)) {

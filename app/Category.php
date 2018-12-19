@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    public function getCategory(){
-
+    public function getCategory()
+    {
     	return $this->hasMany(Product::class);
     }
 }
+  
